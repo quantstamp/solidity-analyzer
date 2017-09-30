@@ -4,20 +4,24 @@
   "description": "Experimenting different techniques for finding bugs in solidity codes",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "./node_modules/.bin/eslint lib/ *.js tests/ && echo Lint passed."
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vmontagh/solidity-analyzer.git"
+    "url": "https://github.com/quantstamp/solidity-analyzer.git"
   },
   "author": "VajihM",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vmontagh/solidity-analyzer/issues"
+    "url": "https://github.com/quantstamp/solidity-analyzer/issues"
   },
-  "homepage": "https://github.com/vmontagh/solidity-analyzer",
+  "homepage": "https://github.com/quantstamp/solidity-analyzer",
   "dependencies": {
     "solidity-parser": "^0.3.0",
-    "ascii-table": "0.0.9"
+    "ascii-table": "^0.0.9"
+  },
+  "devDependencies": {
+    "eslint": "^4.8.0",
   }
 }
