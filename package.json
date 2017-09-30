@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/vmontagh/solidity-analyzer",
   "dependencies": {
-    "solidity-parser": "^0.3.0"
+    "solidity-parser": "^0.3.0",
+    "ascii-table": "0.0.9"
   }
 }
