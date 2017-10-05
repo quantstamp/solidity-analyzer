@@ -12,6 +12,11 @@ var cli = function(){
   for (var i in unsafes){
     console.warn("\tUnsafe modification of '"+unsafes[i].call+"' [indirectly] from '"+unsafes[i].modified+"'.");
   }
+
+  var delegates = SolidityAnalyzer.revealUnsafeDelegatecallsFromFile(target);
+  for (var i in delegates){
+    console.warn("\tA delegateCall in function '"+delegates[i].functionName+"' might cause malicious access to public methods of '"+delegates[i].name+"'.");
+  }
 }
 
 cli()

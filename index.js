@@ -68,13 +68,19 @@ var functionsCallingGivenFunction = function (functionName, contract){
 	return froms;
 }
 
+var findUnsafeDelegatecalls = function (contract){
+	return ASTVisitor.findAllDelegateCallFunctions().find(contract);
+}
+
 module.exports = {
   revealUnsafeCalls: function(contract){
-    console.info(contract);
     console.info(findUnsafeCalls(parser.parse(contract)));
     return  findUnsafeCalls(parser.parse(contract));
   },
   revealUnsafeCallsFromFile: function(contract){
     return  findUnsafeCalls(parser.parseFile(contract));
+  },
+	revealUnsafeDelegatecallsFromFile: function(contract){
+    return  findUnsafeDelegatecalls(parser.parseFile(contract));
   }
 };
