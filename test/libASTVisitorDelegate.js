@@ -1,7 +1,6 @@
 const expect = require('chai').expect;
 const solidityASTVistor = require('../lib/astvisitor');
 const parser     = require("solidity-parser");
-const should = require('chai').should;
 
 describe('Test base AST Visitor for Fiding delegatecall', function () {
 
