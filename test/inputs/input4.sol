@@ -31,5 +31,4 @@ contract MyContract {
         this.h().var2;
         var2.a = 0x0;
     }
-
 }

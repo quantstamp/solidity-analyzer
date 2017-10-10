@@ -15,7 +15,7 @@ var cli = function(){
 
   var delegates = SolidityAnalyzer.revealUnsafeDelegatecallsFromFile(target);
   for (var i in delegates){
-    console.warn("\tA delegateCall in function '"+delegates[i].functionName+"' might cause malicious access to public methods of '"+delegates[i].name+"'.");
+    console.warn("\tA delegateCall in function '"+delegates[i].functionName+"' might cause malicious access to public methods of '"+delegates[i].name+"'("+delegates[i].type+").");
   }
 }
 

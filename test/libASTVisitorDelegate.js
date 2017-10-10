@@ -12,26 +12,17 @@ describe('Test base AST Visitor for Fiding delegatecall', function () {
          {
              functionName: "g",
              name: "_tobDelegated",
-             type: {
-                 name: "_tobDelegated",
-                 type: "address"
-             }
+             type: "address"
          },
          {
              functionName: "f",
              name: "_tobDelegated",
-             type: {
-                 name: "_tobDelegated",
-                 type: "address"
-             }
+             type: "address"
          },
          {
              functionName: "()",
              name: "_tobDelegated",
-             type: {
-                 name: "_tobDelegated",
-                 type: "address"
-             }
+             type: "address"
          }
      ]);
   });
