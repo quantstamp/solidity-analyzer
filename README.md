@@ -45,13 +45,13 @@ Pass the solidity file and the script finds whether there is a path from public
 method to a sensitive state variable (assuming private).
 For example, in the following solidity code:
 
-```javascript
+```solidity
 contract MyContract {
   uint owner;
+  
   function init(uint i_owner) private {
     owner = i_owner;
   }
-
   function resetOwner() {
     owner = 0;
   }
@@ -71,13 +71,13 @@ Unsafe modification of 'owner' [indirectly] from 'resetOwner'.
 Or the analyzer finds the public methods that could indirectly alter any
 sensitive variable.
 
-```javascript
+```solidity
 contract MyContract {
   uint owner;
+  
   function init(uint i_owner) private {
     owner = i_owner;
   }
-
   function resetOwner() {
     init(0);
   }
@@ -87,4 +87,26 @@ The Warning is:
 
 ```shell
 Unsafe modification of 'owner' [indirectly] from 'resetOwner'.
+```
+
+As another check, the analyzer can highlight any use of _delegatecalls_
+that could potentially expose private state variables or internal function calls.
+For example, in the following solidity code:
+
+
+```javascript
+contract MyContract {
+  address owner;
+  MyOtherContract that;
+  
+  function f() {
+      _tobDelegatedToOthe.delegatecall(msg.data);
+  }
+}
+```
+
+The Warning is:
+
+```shell
+A delegateCall in function 'f' might cause malicious access to public methods of 'that'(MyOtherContract).
 ```
