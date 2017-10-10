@@ -45,7 +45,7 @@ Pass the solidity file and the script finds whether there is a path from public
 method to a sensitive state variable (assuming private).
 For example, in the following solidity code:
 
-```solidity
+```javascript
 contract MyContract {
   uint owner;
   
@@ -64,14 +64,14 @@ $ node cli.js toys/input1.sol
 ```
 
 and the analyzer returns the following report:
-```Shell
+```shell
 Unsafe modification of 'owner' [indirectly] from 'resetOwner'.
 ```
 
 Or the analyzer finds the public methods that could indirectly alter any
 sensitive variable.
 
-```solidity
+```javascript
 contract MyContract {
   uint owner;
   
