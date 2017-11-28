@@ -1,5 +1,5 @@
 # solidity-analyzer
-A dev repository for analyzing and finding bugs smart contracts.
+A dev repository for analyzing and finding bugs in smart contracts.
 
 ## Introduction
 Given a smart contract, the analyzer finds any public method that directly or
