@@ -34,10 +34,10 @@ and extract the required information.
 ![Visitors](https://www.use.com/images/s_3/2017_10_01_171_575551a8264b78f33af9.jpg)
 
 ## Install
-Simply install using the package manager
+Simply install globally using the package manager
 
 ```Shell
-$ npm install solidity-analyzer
+$ npm install -g solidity-analyzer
 ```
 
 ## Demo
@@ -60,7 +60,7 @@ contract MyContract {
 Can be executed like:
 
 ```shell
-$ node cli.js toys/input1.sol
+$ solidity-analyzer toys/input1.sol
 ```
 
 and the analyzer returns the following report:

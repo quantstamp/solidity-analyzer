@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const SolidityAnalyzer = require('./index');
 
 var cli = function(){
