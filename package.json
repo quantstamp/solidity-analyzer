@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Experimenting different techniques for finding bugs in solidity codes",
   "main": "index.js",
+  "bin": "./cli.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec",
     "lint": "./node_modules/.bin/eslint lib/ *.js tests/ && echo Lint passed."
